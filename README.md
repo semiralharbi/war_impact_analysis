@@ -2,7 +2,7 @@
 
 Analysis of the economic impact of war: economic resilience, humanitarian aid prioritization, black market and informality, and war costs vs reconstruction costs. Uses a Kaggle dataset and generates charts and summaries for each analysis.
 
-**→ [Polska wersja (README.md)](README.md)**
+**→ [Polska wersja (README.md)](README_PL.md)**
 
 ---
 
