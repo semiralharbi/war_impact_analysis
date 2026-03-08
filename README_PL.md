@@ -2,7 +2,7 @@
 
 Projekt analizy ekonomicznego wpływu wojen: odporność gospodarcza, ubóstwo i brak bezpieczeństwa żywnościowego w konflikcie, czarny rynek i nieformalność oraz koszty wojny vs odbudowy. Wykorzystuje zestaw danych z Kaggle i generuje zestaw wykresów oraz podsumowań dla każdej analizy.
 
-**→ [English version (README_EN.md)](README_EN.md)**
+**→ [English version (README_EN.md)](README.md)**
 
 ---
 
