@@ -11,7 +11,7 @@ from pathlib import Path
 
 from config.settings import get_analysis_output_dir
 from utils.plot_helpers import save_figure
-from analyses.humanitarian_aid_prioritization.constants import (
+from analyses.poverty_and_food_insecurity.constants import (
     COL_EXTREME_POVERTY,
     COL_FOOD_INSECURITY,
     COL_HOUSEHOLDS_POVERTY,
@@ -41,7 +41,7 @@ def chart_boxplot_food_insecurity_by_region(df: pd.DataFrame) -> Path:
     if plot_df.empty:
         fig, ax = plt.subplots(figsize=(8, 4))
         ax.set_title("Brak danych")
-        out = OUTPUT_DIR / "chart_boxplot_food_insecurity_by_region.png"
+        out = OUTPUT_DIR / "chart_food_insecurity_by_region.png"
         save_figure(fig, out)
         return out
 
@@ -53,7 +53,7 @@ def chart_boxplot_food_insecurity_by_region(df: pd.DataFrame) -> Path:
     ax.set_title("Brak bezpieczeństwa żywnościowego wg regionu\nTeza: Które regiony mają najwyższy poziom braku bezpieczeństwa żywnościowego?")
     plt.xticks(rotation=25, ha="right")
     plt.tight_layout()
-    out = OUTPUT_DIR / "chart_boxplot_food_insecurity_by_region.png"
+    out = OUTPUT_DIR / "chart_food_insecurity_by_region.png"
     save_figure(fig, out)
     return out
 
@@ -65,7 +65,7 @@ def chart_boxplot_extreme_poverty_by_conflict_type(df: pd.DataFrame) -> Path:
     if plot_df.empty:
         fig, ax = plt.subplots(figsize=(8, 4))
         ax.set_title("Brak danych")
-        out = OUTPUT_DIR / "chart_boxplot_extreme_poverty_by_conflict_type.png"
+        out = OUTPUT_DIR / "chart_extreme_poverty_by_conflict_type.png"
         save_figure(fig, out)
         return out
 
@@ -77,7 +77,7 @@ def chart_boxplot_extreme_poverty_by_conflict_type(df: pd.DataFrame) -> Path:
     ax.set_title("Skrajne ubóstwo wg typu konfliktu\nTeza: Który typ konfliktu wiąże się z najwyższym skrajnym ubóstwem?")
     plt.xticks(rotation=25, ha="right")
     plt.tight_layout()
-    out = OUTPUT_DIR / "chart_boxplot_extreme_poverty_by_conflict_type.png"
+    out = OUTPUT_DIR / "chart_extreme_poverty_by_conflict_type.png"
     save_figure(fig, out)
     return out
 
@@ -93,7 +93,7 @@ def chart_bar_region_ranking(df: pd.DataFrame) -> Path:
     if plot_df.empty or len(plot_df) < 2:
         fig, ax = plt.subplots(figsize=(8, 4))
         ax.set_title("Brak danych")
-        out = OUTPUT_DIR / "chart_bar_region_ranking.png"
+        out = OUTPUT_DIR / "chart_region_vulnerability_ranking.png"
         save_figure(fig, out)
         return out
 
@@ -117,7 +117,7 @@ def chart_bar_region_ranking(df: pd.DataFrame) -> Path:
     ax.set_title("Ranking regionów najbardziej dotkniętych ubóstwem i brakiem bezpieczeństwa żywnościowego\nTeza: Które regiony są najbardziej dotknięte (złożony wskaźnik: ubóstwo, głód, gospodarstwa w ubóstwie)?")
     ax.grid(True, alpha=0.3, axis="y")
     plt.tight_layout()
-    out = OUTPUT_DIR / "chart_bar_region_ranking.png"
+    out = OUTPUT_DIR / "chart_region_vulnerability_ranking.png"
     save_figure(fig, out)
     return out
 

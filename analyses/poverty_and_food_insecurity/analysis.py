@@ -6,8 +6,8 @@ skrajnego ubóstwa i braku bezpieczeństwa żywnościowego?
 from pathlib import Path
 
 from core.data_loader import load_war_economic_data
-from analyses.humanitarian_aid_prioritization.charts import build_all_charts
-from analyses.humanitarian_aid_prioritization.constants import (
+from analyses.poverty_and_food_insecurity.charts import build_all_charts
+from analyses.poverty_and_food_insecurity.constants import (
     COL_EXTREME_POVERTY,
     COL_FOOD_INSECURITY,
     COL_REGION,
@@ -20,7 +20,7 @@ def run(csv_path: Path | None = None) -> list[Path]:
     n = len(df)
     n_pov = df[COL_EXTREME_POVERTY].notna().sum() if COL_EXTREME_POVERTY in df.columns else 0
     n_food = df[COL_FOOD_INSECURITY].notna().sum() if COL_FOOD_INSECURITY in df.columns else 0
-    print(f"\nDane (pomoc humanitarna): załadowano {n:,} wierszy (ubóstwo skrajne: {n_pov:,}, brak bezpieczeństwa żywnościowego: {n_food:,}).\n")
+    print(f"\nDane (ubóstwo i bezpieczeństwo żywnościowe): załadowano {n:,} wierszy (ubóstwo skrajne: {n_pov:,}, brak bezpieczeństwa żywnościowego: {n_food:,}).\n")
 
     paths = build_all_charts(df)
 
